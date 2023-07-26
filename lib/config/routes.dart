@@ -1,35 +1,7 @@
 class AppRoutes {
   static var splash = '/splash';
-  static var language ='/language';
+  static var language = '/language';
   static var login = '/login';
   static var createAccount = '/createAccount';
-  static var otp  = '/otp'; 
-  static var preference = '/preference';
-  static var dashboard  = '/dashboard';
-  static var home  = '/home';
-  static var category = '/category';
-  static var subcategory = '/subcategory';
-  static var product  = '/product';
-  static var goldenBrisk = '/goldenBrisk';
-  static var search  = '/search';
-  static var aboutus = '/aboutus';
-  static var faq = '/faq';
-  static var editProfile = '/editProfile';
-  static var addAddress = '/addAddress';
-  static var myAddress = '/myAddress';
-  static var changeLanguage = '/changeLanguage';
-  static var help = '/help';
-  static var raiseTicket = '/raiseTicket';
-  static var viewTicket = '/viewTicket';
-  static var viewItem = '/viewItem';
-  static var vendorStore ='/vendorStore';
-  static var viewBroucher = '/viewBroucher';
-  static var order = '/order';
-  static var viewOrder = '/viewOrder';
-  static var cart = '/cart';
-  static var checkout = '/checkout';
-  static var placedOrder ='/placedOrder'; 
-  static var review = '/review';
-  static var privacyPolicy = '/privacyPolicy';
-  static var termsCondition = '/termsCondition';
+  static var otp = '/otp';
 }

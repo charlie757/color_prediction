@@ -1,4 +1,5 @@
 import 'package:color_demo/controller/splash_controller.dart';
+import 'package:color_demo/helper/getText.dart';
 import 'package:color_demo/utils/color_constant.dart';
 import 'package:color_demo/utils/constants.dart';
 import 'package:color_demo/utils/size_config.dart';
@@ -13,14 +14,11 @@ class SplashScreen extends GetView<SplashController> {
     return Scaffold(
         backgroundColor: Colors.black,
         body: Center(
-          child: Text(splashTitle,
-              textAlign: TextAlign.start,
-              style: TextStyle(
-                color: ColorConstant.white,
-                fontSize: 60,
-                fontWeight: FontWeight.w400,
+            child: getText(
+                title: splashTitle,
+                size: 64,
                 fontFamily: GochiHandRegular,
-              )),
-        ));
+                color: ColorConstant.white,
+                fontWeight: FontWeight.w400)));
   }
 }
