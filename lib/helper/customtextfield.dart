@@ -3,6 +3,7 @@ import 'package:color_demo/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+// ignore: must_be_immutable
 class CustomTextfield extends StatefulWidget {
   final String hintText;
   final TextEditingController controller;

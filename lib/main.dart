@@ -1,5 +1,5 @@
 import 'package:color_demo/config/apppages.dart';
-import 'package:color_demo/screens/splash_screen.dart';
+import 'package:color_demo/config/routes.dart';
 import 'package:color_demo/utils/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -29,7 +29,8 @@ class MyApp extends StatelessWidget {
         themeMode: ThemeMode.light,
         debugShowCheckedModeBanner: false,
         getPages: AppPages.pages,
-        home: SplashScreen(),
+        initialRoute: AppRoutes.splash,
+        // home: SplashScreen(),
       ),
     );
   }

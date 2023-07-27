@@ -5,8 +5,8 @@ class SplashController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    // callToNavigate();
     print("dsofgiodj");
+    callToNavigate();
   }
 
   callToNavigate() async {
