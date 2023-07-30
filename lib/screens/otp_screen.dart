@@ -1,3 +1,4 @@
+import 'package:color_demo/config/routes.dart';
 import 'package:color_demo/controller/otp_controller.dart';
 import 'package:color_demo/helper/custombtn.dart';
 import 'package:color_demo/helper/getText.dart';
@@ -130,8 +131,9 @@ class OtpScreen extends GetView<OtpController> {
                       title: verification,
                       height: 45,
                       width: double.infinity,
+                      color: ColorConstant.blackColor,
                       onTap: () {
-                        // Get.toNamed(AppRoutes.changePassword);
+                        Get.toNamed(AppRoutes.dashboard);
                       }),
                 ),
               ],

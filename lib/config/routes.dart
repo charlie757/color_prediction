@@ -6,6 +6,5 @@ class AppRoutes {
   static var otp = '/otp';
   static var forgotPassword = '/forgotPassword';
   static var changePassword = '/changePassword';
-
-
+  static var dashboard = '/dashboard';
 }

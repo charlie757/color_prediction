@@ -7,6 +7,7 @@ class CustomBtn extends StatefulWidget {
   final String title;
   final double height;
   final double width;
+  final Color color;
   final bool isLoading;
   final Function() onTap;
   const CustomBtn(
@@ -14,6 +15,7 @@ class CustomBtn extends StatefulWidget {
       required this.height,
       required this.width,
       required this.onTap,
+      required this.color,
       this.isLoading = false});
 
   @override
@@ -26,9 +28,7 @@ class _CustomBtnState extends State<CustomBtn> {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
           // elevation: 0,
-          primary: widget.isLoading
-              ? ColorConstant.c3Color
-              : ColorConstant.blackColor,
+          primary: widget.isLoading ? ColorConstant.c3Color : widget.color,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(5))),
       onPressed: widget.onTap,
@@ -52,7 +52,7 @@ class _CustomBtnState extends State<CustomBtn> {
                 : Container(),
             getText(
                 title: widget.title,
-                size: 16,
+                size: 14,
                 fontFamily: LatoRegular,
                 color: ColorConstant.white,
                 fontWeight: FontWeight.w700),

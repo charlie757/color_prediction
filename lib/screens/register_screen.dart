@@ -132,6 +132,7 @@ class RegisterScreen extends GetView<RegisterController> {
                   title: 'Register Now',
                   height: 45,
                   width: double.infinity,
+                  color: ColorConstant.blackColor,
                   onTap: () {
                     Get.toNamed(AppRoutes.otp);
                   }),

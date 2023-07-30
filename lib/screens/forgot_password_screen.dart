@@ -74,6 +74,7 @@ class ForgotPasswordScreen extends GetView<ForgotPasswordController> {
                     title: forgotConfirmPassword,
                     height: 45,
                     width: double.infinity,
+                    color: ColorConstant.blackColor,
                     onTap: () {
                       Get.toNamed(AppRoutes.otp);
                     }),

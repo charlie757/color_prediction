@@ -2,6 +2,7 @@ import 'package:color_demo/controller/change_password_controller.dart';
 import 'package:color_demo/helper/appbar.dart';
 import 'package:color_demo/helper/custombtn.dart';
 import 'package:color_demo/helper/customtextfield.dart';
+import 'package:color_demo/utils/color_constant.dart';
 import 'package:color_demo/utils/constants.dart';
 import 'package:color_demo/utils/screensize.dart';
 import 'package:flutter/material.dart';
@@ -40,6 +41,7 @@ class ChangePasswordScreen extends GetView<ChangePasswordController> {
                     title: btSaveNowPassword,
                     height: 45,
                     width: double.infinity,
+                    color: ColorConstant.blackColor,
                     onTap: () {
                       // Get.toNamed(AppRoutes.otp);
                     }),

@@ -76,6 +76,7 @@ class LoginScreen extends GetView<LoginController> {
                   title: 'Continue',
                   height: 45,
                   width: double.infinity,
+                  color: ColorConstant.blackColor,
                   onTap: () {
                     Get.toNamed(AppRoutes.otp);
                   }),
