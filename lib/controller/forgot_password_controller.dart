@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
-class OtpController extends GetxController {
-  final otpController = TextEditingController();
+class ForgotPasswordController extends GetxController {
+  final emailController = TextEditingController();
   final formKey = GlobalKey<FormState>();
   final counter = 0.obs;
   Timer? timer;
@@ -31,7 +31,7 @@ class OtpController extends GetxController {
   }
 
   void resetValues() {
-    otpController.text = "";
+    emailController.text = "";
   }
 
 

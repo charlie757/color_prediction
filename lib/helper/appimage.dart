@@ -1,56 +1,6 @@
 
 
 class AppImages{
- static const backgroundImage = 'assets/images/background.png';
- static const appLogo = 'assets/images/applogo.png';
- static const splashImage = 'assets/images/splash.png';
- static const preferenceBackground = 'assets/images/preferencebackground.png';  
- static const homeIcon = 'assets/icons/home.png';
- static const cartIcon = 'assets/icons/cart.png';
- static const wishlistIcon = 'assets/icons/wishlist.png';
- static const profileIcon = 'assets/icons/profile.png';
- static const locationIcon = 'assets/icons/location.png';
- static const bellIcon = 'assets/icons/bellicon.png';
- static const searchIcon = 'assets/icons/search.png';
- static const backIcon = 'assets/icons/back.png';
- static const arrowRightIcon = 'assets/icons/arrowright.png';
- static const sortIcon = 'assets/icons/sorticon.png';
- static const filterIcon = 'assets/icons/filtericon.png'; 
- static const favIcon = 'assets/icons/wishlist.png';
- static const favBorderIcon = 'assets/icons/fav_border.png';
- static const aboutUs = 'assets/icons/aboutus.png';
- static const delete = 'assets/icons/delete.png';
- static const deleteColor = 'assets/icons/delete_color.png';
- static const edit = 'assets/icons/edit.png';
- static const faacebook = 'assets/icons/facebook.png';
- static const faq = 'assets/icons/faq.png';
- static const help = 'assets/icons/help.png';
- static const instragram = 'assets/icons/instragram.png';
- static const language = 'assets/icons/language.png';
- static const logout = 'assets/icons/logout.png';
- static const order = 'assets/icons/order.png';
- static const pix = 'assets/icons/pix.png';
- static const preference = 'assets/icons/preference.png';
- static const arrowDown = 'assets/icons/arrow_down.png';
- static const arrowUp = 'assets/icons/arrow_up.png';
- static const editAddress = 'assets/icons/editaddress.png';
- static const documentPicker = 'assets/icons/documentpicker.png';
- static const wishlistYellow = 'assets/icons/wishlist_yellow.png';
- static const cartTopIcon = 'assets/icons/carttopicon.png';
- static const searchIcon1 = 'assets/icons/searchicon.png';
- static const arrowRight = 'assets/icons/arrow_right.png';
- static const bookIcon = 'assets/icons/bookicon.png';
- static const downloadIcon = 'assets/icons/download.png';
- static const starIcon = 'assets/icons/star.png';
- static const starYellowIcon = 'assets/icons/star_yellow.png';
- static const editOutline  = 'assets/icons/edit_outline.png';
- static const addIcon = 'assets/icons/addicon.png';
- static const minusIcon = 'assets/icons/minusicon.png';
- static const percentIcon = 'assets/icons/percenticon.png';
- static const checkIcon = 'assets/icons/checkicon.png';
- static const promoCurrency = 'assets/icons/promocurrency.png';
- static const promoPercent = 'assets/icons/promopercent.png';
- static const closeIcon = 'assets/icons/closeicon.png';
- static const privacyIcon = 'assets/icons/privacypolicy.png';
- static const termsIcon = 'assets/icons/terms.png';
+ static const leftImage = 'assets/images/left.png';
+
 }
