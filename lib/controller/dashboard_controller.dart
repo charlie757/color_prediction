@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 
 class DashboardController extends GetxController {
   final screensList =
-      [HomeScreen(), BetScreen(), WalletScreen(), ProfileScreen()].obs;
+      [const HomeScreen(), const BetScreen(), const WalletScreen(), const ProfileScreen()].obs;
 
   final selectedIndex = 0.obs;
 }

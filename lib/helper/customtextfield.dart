@@ -11,7 +11,7 @@ class CustomTextfield extends StatefulWidget {
   List<TextInputFormatter>? inputFormatters;
   bool? isObscureText;
   CustomTextfield(
-      {required this.hintText, required this.controller, this.inputFormatters,this.prefix,this.isObscureText = false,
+      {super.key, required this.hintText, required this.controller, this.inputFormatters,this.prefix,this.isObscureText = false,
       });
   @override
   State<CustomTextfield> createState() => _CustomTextfieldState();

@@ -81,7 +81,7 @@ class RegisterScreen extends GetView<RegisterController> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 15),
+                  padding: const EdgeInsets.only(top: 15),
                   child: RichText(
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
@@ -106,7 +106,7 @@ class RegisterScreen extends GetView<RegisterController> {
                                   'https://ludoking.com/privacy.html');
                             },
                         ),
-                        TextSpan(text: loginAnd),
+                        const TextSpan(text: loginAnd),
                         TextSpan(
                           text: loginPrivacy,
                           style: TextStyle(

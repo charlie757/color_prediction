@@ -3,8 +3,10 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends GetView<ProfileController> {
+  const ProfileScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return const Scaffold();
   }
 }

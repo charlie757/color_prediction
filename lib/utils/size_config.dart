@@ -39,8 +39,8 @@ class SizeConfig {
             ? screenHeightConstant / 16.5
             : screenHeightConstant / 24.5;
 
-    print("heightMultiplier :${_blocHeight}");
-    print("widthMultiplier :${_blockWidth}");
+    print("heightMultiplier :$_blocHeight");
+    print("widthMultiplier :$_blockWidth");
 
     print(SizeConfig.screenHeightConstant);
   }

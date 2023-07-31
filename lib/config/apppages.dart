@@ -29,14 +29,14 @@ class AppPages {
         transition: Transition.fade),
     GetPage(
         name: AppRoutes.login,
-        page: () => LoginScreen(),
+        page: () => const LoginScreen(),
         binding: LoginBinding(),
         curve: Curves.easeInOut,
         transitionDuration: const Duration(milliseconds: 50),
         transition: Transition.fade),
     GetPage(
         name: AppRoutes.otp,
-        page: () => OtpScreen(),
+        page: () => const OtpScreen(),
         binding: OtpBinding(),
         curve: Curves.easeInOut,
         transitionDuration: const Duration(milliseconds: 50),
@@ -64,7 +64,7 @@ class AppPages {
         transition: Transition.fade),
     GetPage(
         name: AppRoutes.dashboard,
-        page: () => DashboardScreen(),
+        page: () => const DashboardScreen(),
         binding: DashboardBinding(),
         curve: Curves.easeInOut,
         transitionDuration: const Duration(milliseconds: 50),

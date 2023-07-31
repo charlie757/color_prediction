@@ -11,7 +11,8 @@ class CustomBtn extends StatefulWidget {
   final bool isLoading;
   final Function() onTap;
   const CustomBtn(
-      {required this.title,
+      {super.key,
+      required this.title,
       required this.height,
       required this.width,
       required this.onTap,
@@ -28,7 +29,8 @@ class _CustomBtnState extends State<CustomBtn> {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
           // elevation: 0,
-          primary: widget.isLoading ? ColorConstant.c3Color : widget.color,
+          backgroundColor:
+              widget.isLoading ? ColorConstant.c3Color : widget.color,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(5))),
       onPressed: widget.onTap,

@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
+  final isViewResult = false.obs;
+  final tabBarIndex = 0.obs;
   final amountController = TextEditingController();
-  final GlobalKey scaffoldKey = GlobalKey();
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+
   final colorList = [
     const Color(0xff008000),
     const Color(0xff6868AC),

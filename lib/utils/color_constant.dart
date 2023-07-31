@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class ColorConstant {
@@ -12,4 +11,5 @@ class ColorConstant {
   static Color blueColor = const Color(0xff0702ff);
   static Color greenColor = const Color(0xff008000);
   static Color redColor = const Color(0xffFF0000);
+  static Color c0Color = const Color(0xffC0C0C0);
 }

@@ -10,7 +10,7 @@ class getText extends StatefulWidget {
   final double letterSpacing;
   final double lineHeight;
   const getText(
-      {required this.title,
+      {super.key, required this.title,
       required this.size,
       required this.fontFamily,
       required this.color,
