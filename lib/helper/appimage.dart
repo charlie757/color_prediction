@@ -21,4 +21,6 @@ class AppImages {
   static const drawer6Icon = 'assets/images/drawer6.png';
   static const drawer7Icon = 'assets/images/drawer7.png';
   static const drawer8Icon = 'assets/images/drawer8.png';
+  static const keyboardArrowRightIcon =
+      'assets/images/keyboard_arrow_right.png';
 }
