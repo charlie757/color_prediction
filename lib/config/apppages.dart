@@ -1,3 +1,4 @@
+import 'package:color_demo/binding/bank_details_binding.dart';
 import 'package:color_demo/binding/change_password_binding.dart';
 import 'package:color_demo/binding/dashboard_binding.dart';
 import 'package:color_demo/binding/forgot_password_binding.dart';
@@ -15,6 +16,8 @@ import 'package:color_demo/screens/register_screen.dart';
 import 'package:color_demo/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../screens/bank_details_screen.dart';
 
 class AppPages {
   static var initialRoute = AppRoutes.splash;
@@ -66,6 +69,14 @@ class AppPages {
         name: AppRoutes.dashboard,
         page: () => const DashboardScreen(),
         binding: DashboardBinding(),
+        curve: Curves.easeInOut,
+        transitionDuration: const Duration(milliseconds: 50),
+        transition: Transition.fade),
+
+    GetPage(
+        name: AppRoutes.bankDetails,
+        page: () => const BankDetailsScreen(),
+        binding: BankDetailsBinding(),
         curve: Curves.easeInOut,
         transitionDuration: const Duration(milliseconds: 50),
         transition: Transition.fade),

@@ -7,4 +7,6 @@ class AppRoutes {
   static var forgotPassword = '/forgotPassword';
   static var changePassword = '/changePassword';
   static var dashboard = '/dashboard';
+  static var bankDetails = '/bankDetails';
+
 }

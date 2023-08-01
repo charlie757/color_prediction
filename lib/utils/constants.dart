@@ -43,16 +43,13 @@ const String etPassword = "Password";
 const String etConfirmPassword = "Confirm Password";
 const String btSaveNowPassword = "Save Now";
 
-//Register Screen
-const String registerTitle = "Register Account";
-const String registerSubTitle = "Please register down below";
-const String registerName = "Full Name";
-const String registerEmail = "Email Address";
-const String registerPhone = "Phone Number";
-const String registerPassword = "Password";
-const String registerButton = "SIGN UP";
-const String registeraccount = "Already Have Account? ";
-const String registerlogin = "Log In";
+// Bank Details
+const String bankDetailsAppBar = "Bank Details";
+const String etEnterBankName = "Enter Bank Details";
+const String etEnterAccountNumber = "Enter Account Number";
+const String etConformAccountNumber = "Conform Account Number";
+const String etEnterIfsc = "Enter IFSC Code";
+const String save = "Save";
 
 //Otp Screen
 const String otpTitle = "OTP Verification";
@@ -67,34 +64,10 @@ const String verification = "Verification";
 //Home Screen Screen
 const String homeTitle = "Kodago Highlights";
 
-//Home Screen Details
-const String userID = "User ID";
-const String city = "City";
-const String location = "Location";
-const String number = "Number";
-const String document = "Document";
-const String imagesProfile = "Images";
-const String comment="comments";
-
-//Group Main Screen
-const String groupTitle="Groups";
-const String groupSearchHint="Search Groups..";
-
-//Notification
-const String notificationTitle="Notification";
-
-//profile Screen
-const String profile = "Profile";
-const String editProfile = "Edit Profile";
-const String changePassword="Change Password";
-const String notificationProfile = "Notifications ";
-const String sub="Subscription Plan";
-const String invoice = "Invoices and Payment History";
-const String logout = "Log Out";
-
-//edit Profile
-const String mobile = "Phone No";
-const String save = "Save Now";
+//edit profile Screen
+const String etName = "Name";
+const String etMobile = "Mobile Number";
+const String etEmail = "Email Address";
 
 //change Password
 const String oldPassword = "Old Password";
