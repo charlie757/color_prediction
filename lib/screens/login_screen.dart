@@ -23,7 +23,7 @@ class LoginScreen extends GetView<LoginController> {
         ));
     return Scaffold(
       body: Form(
-        key: controller.formKey,
+        key: controller.formloginkey,
         child: Padding(
           padding: const EdgeInsets.only(left: 28, right: 28, top: 0),
           child: Column(
@@ -72,14 +72,19 @@ class LoginScreen extends GetView<LoginController> {
                 ),
               ),
               ScreenSize.height(31),
-              CustomBtn(
-                  title: 'Continue',
-                  height: 45,
-                  width: double.infinity,
-                  color: ColorConstant.blackColor,
-                  onTap: () {
-                    Get.toNamed(AppRoutes.otp);
-                  }),
+              Obx(()=>
+                CustomBtn(
+                    title: 'Continue',
+                    height: 45,
+                    width: double.infinity,
+                    color: ColorConstant.blackColor,
+                    isLoading: controller.isLoading.value,
+                    onTap: () {
+                      controller.isLoading.value
+                          ? null
+                          : controller.validation();
+                    }),
+              ),
               ScreenSize.height(21),
               GestureDetector(
                 onTap: () {

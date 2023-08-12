@@ -1,31 +1,80 @@
+import 'dart:convert';
+
+import 'package:color_demo/api/apiconfig.dart';
+import 'package:color_demo/config/routes.dart';
 import 'package:color_demo/utils/size_config.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class RegisterController extends GetxController {
   final numberController = TextEditingController();
+  final emailController = TextEditingController();
   final passwordController = TextEditingController();
-  final formKey = GlobalKey<FormState>();
+
+  final formcreatekey = GlobalKey<FormState>();
   final checkBoxValue = false.obs;
   final passwordVisible = true.obs;
+  final isLoading = false.obs;
+  final checkBoxValidation = false.obs;
 
-  @override
-  void onInit() {
-    SizeConfig().init();
-    super.onInit();
+
+  validation() {
+    if (!formcreatekey.currentState!.validate()) {}
+    else if (checkBoxValue.value == false) {
+      checkBoxValidation.value = true;
+      // EasyLoading.showToast('Agree terms & conditions',toastPosition: EasyLoadingToastPosition.center);
+    }
+    else {
+      checkBoxValidation.value = false;
+      createAccountApiFunction();
+    }
   }
 
-  void resetValues() {
-    numberController.clear();
-    passwordController.clear();
+
+  createAccountApiFunction() async {
+    isLoading.value = true;
+    var body = json.encode({
+      "email": emailController.text.toString(),
+      "mobile": numberController.text.toString(),
+      "password": passwordController.text.toString(),
+      "device_token": "test123123"
+    });
+    final response = await ApiConfig.post(
+        body: body, url: ApiConfig.signUpUrl, useAuthToken: false);
+    isLoading.value = false;
+    if (response != null && response['success'] == true) {
+      sendOtpApiFunction();
+    }
+    else {
+      EasyLoading.showToast(response['message'].toString(),
+          toastPosition: EasyLoadingToastPosition.bottom);
+      // errorSnackBar('Error', response['message']);
+    }
   }
 
-  void launchURL(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
+  void sendOtpApiFunction() async {
+    isLoading.value = true;
+    var body = json.encode({
+      "mobile": numberController.text.toString(),
+      "type": "register",
+
+    });
+    final response = await ApiConfig.post(
+        body: body, url: ApiConfig.otpUrl, useAuthToken: false);
+    isLoading.value = false;
+    if (response != null && response['success'] == true) {
+      EasyLoading.showToast(response['otpCode'].toString());
+    /*  Get.offAllNamed(AppRoutes.otp, parameters: {
+        'number': numberController.text,
+        'routes': 'create',
+        'id': response['data']['_id']
+      });*/
+    }
+    else {
+      EasyLoading.showToast(response['message'].toString(),
+          toastPosition: EasyLoadingToastPosition.center);
     }
   }
 }

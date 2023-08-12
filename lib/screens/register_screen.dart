@@ -24,7 +24,7 @@ class RegisterScreen extends GetView<RegisterController> {
         ));
     return Scaffold(
       body: Form(
-        key: controller.formKey,
+        key: controller.formcreatekey,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -55,7 +55,7 @@ class RegisterScreen extends GetView<RegisterController> {
                   ScreenSize.height(21),
                   CustomTextfield(
                       hintText: 'Email Address',
-                      controller: controller.numberController),
+                      controller: controller.emailController),
                   ScreenSize.height(21),
                   CustomTextfield(
                       hintText: 'Password',
@@ -102,8 +102,7 @@ class RegisterScreen extends GetView<RegisterController> {
                           ),
                           recognizer: TapGestureRecognizer()
                             ..onTap = () {
-                              controller.launchURL(
-                                  'https://ludoking.com/privacy.html');
+
                             },
                         ),
                         const TextSpan(text: loginAnd),
@@ -116,8 +115,8 @@ class RegisterScreen extends GetView<RegisterController> {
                           ),
                           recognizer: TapGestureRecognizer()
                             ..onTap = () {
-                              controller.launchURL(
-                                  'https://www.kodago.com/page/privacy-policy');
+                             /* controller.launchURL(
+                                  'https://www.kodago.com/page/privacy-policy');*/
                             },
                         ),
                       ],
@@ -133,8 +132,11 @@ class RegisterScreen extends GetView<RegisterController> {
                   height: 45,
                   width: double.infinity,
                   color: ColorConstant.blackColor,
+                  isLoading: controller.isLoading.value,
                   onTap: () {
-                    Get.toNamed(AppRoutes.otp);
+                    controller.isLoading.value
+                        ? null
+                        : controller.validation();
                   }),
             ),
             ScreenSize.height(21),

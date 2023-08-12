@@ -3,6 +3,7 @@ import 'package:color_demo/config/routes.dart';
 import 'package:color_demo/utils/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() async {
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         getPages: AppPages.pages,
         initialRoute: AppRoutes.splash,
+        builder: EasyLoading.init(),
         // home: SplashScreen(),
       ),
     );

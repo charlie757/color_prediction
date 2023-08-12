@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 const kContentColorLightTheme = Colors.black;
 const kContentColorDarkTheme = Colors.white;
 
+
+const authToken = '';
+
+
 //Font Family
 const String GochiHandRegular = 'gochiHand';
 const String LatoBlack = 'latoBlack';
