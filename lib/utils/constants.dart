@@ -15,23 +15,52 @@ const String LatoLight = 'latoLight';
 const String LatoBold  = 'latoBold';
 //Splash Screen
 const String splashTitle = "Demo";
+
+
 // Login Screen
-const String loginTitle = "Welcome Back!";
-const String loginSubTitle = "Fill your details";
-const String loginEmail = "Email Address / Phone Number";
+const String loginTitle = "Proceed with your";
+const String loginSubTitle = "Login";
+
+const String loginMobile = "Mobile number";
+const String loginEnterPhoneValidation ="Enter phone number";
+const String loginEnterValidPhoneValidation ="Enter valid number";
+
 const String loginPassword = "Password";
-const String loginConformPassword = "Confirm";
+const String loginEnterPassword ="Enter Password";
+const String loginEnterValidPassword ="Enter Valid Password";
+
 const String loginForgotPass = "Forgot Password?";
-const String loginButton = "LOG IN";
-const String loginNewUser = "New User? ";
+const String loginButton = "Continue";
+
+const String loginNewUser = "New User?";
 const String loginCreateAccount = "Create Account";
-const String loginAgree ='I agree to the ';
-const String loginTerms ='terms & conditions';
-const String loginAnd ='\nand ';
-const String loginPrivacy ='privacy policy';
-const String loginEmailPhoneValidation ="Enter email or phone number";
-const String loginPasswordValidation ="Enter Your Password";
-const String loginCheckBoxValidation ="Please agree to the terms & conditions and privacy policy";
+
+
+// Login Screen
+const String registerTitle = "Register Account";
+const String registerSubTitle = "Please register down below";
+const String registerEmail = "Email Address";
+const String registerMobile = "Mobile number";
+const String registerPassword = "Password";
+
+const String registerButton = "Register Now";
+const String registerAgree ='I agree to the ';
+const String registerTerms ='terms & conditions';
+const String registerAnd ='\nand ';
+const String registerPrivacy ='privacy policy';
+
+const String registerAlreadyAccount ='Already Have Account?';
+const String registerLogIn ='Log In';
+
+const String registerEnterPhone ="Enter phone number";
+const String registerValidPhone ="Enter Valid phone number";
+
+const String registerEnterPassword ="Enter Your Password";
+const String registerValidPassword ="Enter Valid Password";
+
+const String registerEnterEmail ="Enter Your Email";
+const String registerValidEmail ="Enter Valid Your Email";
+
 
 // ForgotPassword Screen
 const String forgotAppBar = "Forgot Password";

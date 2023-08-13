@@ -31,14 +31,14 @@ class LoginScreen extends GetView<LoginController> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               getText(
-                  title: 'Proceed with your',
+                  title: loginTitle,
                   size: AppFontSize.s20,
-                  fontFamily: GochiHandRegular,
+                  fontFamily: LatoBlack,
                   color: ColorConstant.blackColor,
                   fontWeight: FontWeight.w800),
               ScreenSize.height(4),
               getText(
-                  title: 'Login',
+                  title: loginSubTitle,
                   textAlign: TextAlign.start,
                   size: AppFontSize.s20,
                   fontFamily: LatoBlack,
@@ -46,13 +46,36 @@ class LoginScreen extends GetView<LoginController> {
                   fontWeight: FontWeight.w800),
               ScreenSize.height(21),
               CustomTextfield(
-                  hintText: 'Mobile number',
-                  controller: controller.numberController),
+                  hintText: loginMobile,
+                  controller: controller.numberController,
+                  textInputType: const TextInputType.numberWithOptions(signed: true, decimal: true),
+                  inputFormatters: [
+                    FilteringTextInputFormatter.digitsOnly,
+                    LengthLimitingTextInputFormatter(10)
+                  ],
+                  validator: (val) {
+                    if (val!.isEmpty) {
+                      return loginEnterPhoneValidation;
+                    } else if (val.length < 10) {
+                      return loginEnterValidPhoneValidation;
+                    }
+                  },
+              ),
               ScreenSize.height(31),
+
               CustomTextfield(
-                  hintText: 'Password',
+                  hintText: loginPassword,
+                  controller: controller.passwordController,
                   isObscureText: controller.passwordVisible.value,
-                  controller: controller.passwordController),
+                  validator: (val) {
+                    if (val!.isEmpty) {
+                      return loginEnterPassword;
+                    } else if (val.length < 6) {
+                      return loginEnterValidPassword;
+                    }
+                  },
+                  ),
+
               ScreenSize.height(10),
               GestureDetector(
                 onTap: () {
@@ -63,7 +86,7 @@ class LoginScreen extends GetView<LoginController> {
                   children: [
                     getText(
                         textAlign: TextAlign.end,
-                        title: 'Forget Password?',
+                        title: loginForgotPass,
                         size: AppFontSize.s14,
                         fontFamily: LatoRegular,
                         color: ColorConstant.lightBlueColor,
@@ -74,7 +97,7 @@ class LoginScreen extends GetView<LoginController> {
               ScreenSize.height(31),
               Obx(()=>
                 CustomBtn(
-                    title: 'Continue',
+                    title: loginButton,
                     height: 45,
                     width: double.infinity,
                     color: ColorConstant.blackColor,
@@ -95,7 +118,7 @@ class LoginScreen extends GetView<LoginController> {
                   children: [
                     getText(
                         textAlign: TextAlign.end,
-                        title: 'New User ?',
+                        title: loginNewUser,
                         size: AppFontSize.s14,
                         fontFamily: LatoRegular,
                         color: ColorConstant.newUser,
@@ -103,7 +126,7 @@ class LoginScreen extends GetView<LoginController> {
                     ScreenSize.width(5),
                     getText(
                         textAlign: TextAlign.end,
-                        title: 'Create Account',
+                        title: loginCreateAccount,
                         size: AppFontSize.s14,
                         fontFamily: LatoRegular,
                         color: ColorConstant.blackColor,

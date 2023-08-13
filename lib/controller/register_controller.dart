@@ -21,10 +21,11 @@ class RegisterController extends GetxController {
 
 
   validation() {
-    if (!formcreatekey.currentState!.validate()) {}
+    if (!formcreatekey.currentState!.validate()) {
+
+    }
     else if (checkBoxValue.value == false) {
       checkBoxValidation.value = true;
-      // EasyLoading.showToast('Agree terms & conditions',toastPosition: EasyLoadingToastPosition.center);
     }
     else {
       checkBoxValidation.value = false;
@@ -59,18 +60,12 @@ class RegisterController extends GetxController {
     var body = json.encode({
       "mobile": numberController.text.toString(),
       "type": "register",
-
     });
     final response = await ApiConfig.post(
         body: body, url: ApiConfig.otpUrl, useAuthToken: false);
     isLoading.value = false;
     if (response != null && response['success'] == true) {
       EasyLoading.showToast(response['otpCode'].toString());
-    /*  Get.offAllNamed(AppRoutes.otp, parameters: {
-        'number': numberController.text,
-        'routes': 'create',
-        'id': response['data']['_id']
-      });*/
     }
     else {
       EasyLoading.showToast(response['message'].toString(),

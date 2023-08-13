@@ -7,6 +7,7 @@ import 'package:color_demo/utils/color_constant.dart';
 import 'package:color_demo/utils/constants.dart';
 import 'package:color_demo/utils/screensize.dart';
 import 'package:color_demo/utils/size_config.dart';
+import 'package:color_demo/utils/validation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -35,31 +36,57 @@ class RegisterScreen extends GetView<RegisterController> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   getText(
-                      title: 'Register Account',
+                      title: registerTitle,
                       size: AppFontSize.s24,
                       fontFamily: LatoBlack,
                       color: ColorConstant.blackColor,
                       fontWeight: FontWeight.w800),
                   ScreenSize.height(6),
+
                   getText(
-                      title: 'Please register down below',
+                      title: registerSubTitle,
                       textAlign: TextAlign.start,
                       size: AppFontSize.s14,
                       fontFamily: LatoLight,
                       color: ColorConstant.hintColor,
                       fontWeight: FontWeight.w800),
                   ScreenSize.height(21),
+
                   CustomTextfield(
-                      hintText: 'Mobile number',
+                      hintText: registerMobile,
+                      validator: (val) {
+                        if (val!.isEmpty) {
+                          return registerEnterPhone;
+                        } else if (val.length < 10) {
+                          return registerValidPhone;
+                        }
+                      },
                       controller: controller.numberController),
                   ScreenSize.height(21),
+
                   CustomTextfield(
-                      hintText: 'Email Address',
-                      controller: controller.emailController),
+                      hintText: registerEnterEmail,
+                      validator: (value) {
+                        if (value == null ||
+                            (!isValidEmail(value, isRequired: true))) {
+                          return registerValidEmail;
+                        }
+                        return null;
+                      },
+                      controller: controller.emailController
+                  ),
                   ScreenSize.height(21),
+
                   CustomTextfield(
-                      hintText: 'Password',
+                      hintText: registerPassword,
                       isObscureText: controller.passwordVisible.value,
+                      validator: (val) {
+                        if (val!.isEmpty) {
+                          return registerEnterPassword;
+                        } else if (val.length < 6) {
+                          return registerValidPassword;
+                        }
+                      },
                       controller: controller.passwordController),
                 ],
               ),
@@ -86,7 +113,7 @@ class RegisterScreen extends GetView<RegisterController> {
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     text: TextSpan(
-                      text: loginAgree,
+                      text: registerAgree,
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: AppFontSize.s16,
@@ -94,7 +121,7 @@ class RegisterScreen extends GetView<RegisterController> {
                       ),
                       children: [
                         TextSpan(
-                          text: loginTerms,
+                          text: registerTerms,
                           style: TextStyle(
                             color: ColorConstant.hintColor,
                             fontSize: AppFontSize.s16,
@@ -105,9 +132,9 @@ class RegisterScreen extends GetView<RegisterController> {
 
                             },
                         ),
-                        const TextSpan(text: loginAnd),
+                        const TextSpan(text: registerAnd),
                         TextSpan(
-                          text: loginPrivacy,
+                          text: registerPrivacy,
                           style: TextStyle(
                             fontSize: AppFontSize.s16,
                             color: ColorConstant.hintColor,
@@ -128,7 +155,7 @@ class RegisterScreen extends GetView<RegisterController> {
             Padding(
               padding: const EdgeInsets.only(left: 25, right: 25, top: 20),
               child: CustomBtn(
-                  title: 'Register Now',
+                  title: registerButton,
                   height: 45,
                   width: double.infinity,
                   color: ColorConstant.blackColor,
@@ -149,15 +176,16 @@ class RegisterScreen extends GetView<RegisterController> {
                 children: [
                   getText(
                       textAlign: TextAlign.end,
-                      title: 'Already Have Account?',
+                      title: registerAlreadyAccount,
                       size: AppFontSize.s14,
                       fontFamily: LatoRegular,
                       color: ColorConstant.newUser,
                       fontWeight: FontWeight.w700),
                   ScreenSize.width(5),
+
                   getText(
                       textAlign: TextAlign.end,
-                      title: 'Log In',
+                      title: registerLogIn,
                       size: AppFontSize.s14,
                       fontFamily: LatoRegular,
                       color: ColorConstant.blackColor,
