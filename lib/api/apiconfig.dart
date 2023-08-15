@@ -12,12 +12,13 @@ import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ApiConfig {
-  static String baseUrl = 'https://uiuxdepot.com/ankur/money_winzo/public/api';
+  static String baseUrl = 'https://uiuxdepot.com/ankur/money_winzo/public/api/';
 
   // atuh
-  static String signUpUrl = '${baseUrl}/user/signup';
-  static String loginUrl = '${baseUrl}/user/login';
-  static String otpUrl = '${baseUrl}/otp/send';
+  static String signUpUrl = '${baseUrl}user/signup';
+  static String loginUrl = '${baseUrl}user/login';
+  static String otpUrl = '${baseUrl}otp/send';
+  static String verifyOtpUrl = '${baseUrl}otp/verify';
 
   static Future post({
     required body,
@@ -40,17 +41,16 @@ class ApiConfig {
       final dataAll = json.decode(response.body);
       if (response.statusCode == 200) {
         return dataAll;
-      }
-       
-       else {
-         if(dataAll['message']=='Fail to authenticate token.'){
+      } else {
+        if (dataAll['message'] == 'Fail to authenticate token.') {
           prefs.clear();
           Get.offAllNamed(AppRoutes.login);
-         }
-           if(dataAll['message']=='Your profile is blocked. Please contact to admin'){
+        }
+        if (dataAll['message'] ==
+            'Your profile is blocked. Please contact to admin') {
           prefs.clear();
           Get.offAllNamed(AppRoutes.login);
-         }
+        }
         return dataAll;
       }
     } catch (e) {
@@ -81,24 +81,25 @@ class ApiConfig {
         log(response.body);
         print(response.request);
       }
-        final resultPort = ReceivePort();
+      final resultPort = ReceivePort();
 
       final dataAll = json.decode(response.body);
       // print("dataAll...$dataAll");
       if (response.statusCode == 200) {
         // print("dataAll2...$dataAll");
-       
+
         return dataAll;
       } else {
-         if(dataAll['message']=='Fail to authenticate token.'){
-         prefs.clear();
-          Get.offAllNamed(AppRoutes.login);
-         }
-           if(dataAll['message']=='Your profile is blocked. Please contact to admin'){
+        if (dataAll['message'] == 'Fail to authenticate token.') {
           prefs.clear();
           Get.offAllNamed(AppRoutes.login);
-         }
-         
+        }
+        if (dataAll['message'] ==
+            'Your profile is blocked. Please contact to admin') {
+          prefs.clear();
+          Get.offAllNamed(AppRoutes.login);
+        }
+
         return null;
       }
     } catch (e) {
@@ -140,5 +141,4 @@ class ApiConfig {
       rethrow;
     }
   }
-
 }

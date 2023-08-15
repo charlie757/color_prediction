@@ -19,55 +19,30 @@ class RegisterController extends GetxController {
   final isLoading = false.obs;
   final checkBoxValidation = false.obs;
 
-
   validation() {
     if (!formcreatekey.currentState!.validate()) {
-
-    }
-    else if (checkBoxValue.value == false) {
+    } else if (checkBoxValue.value == false) {
       checkBoxValidation.value = true;
-    }
-    else {
+    } else {
       checkBoxValidation.value = false;
-      createAccountApiFunction();
-    }
-  }
-
-
-  createAccountApiFunction() async {
-    isLoading.value = true;
-    var body = json.encode({
-      "email": emailController.text.toString(),
-      "mobile": numberController.text.toString(),
-      "password": passwordController.text.toString(),
-      "device_token": "test123123"
-    });
-    final response = await ApiConfig.post(
-        body: body, url: ApiConfig.signUpUrl, useAuthToken: false);
-    isLoading.value = false;
-    if (response != null && response['success'] == true) {
+      // createAccountApiFunction();
       sendOtpApiFunction();
-    }
-    else {
-      EasyLoading.showToast(response['message'].toString(),
-          toastPosition: EasyLoadingToastPosition.bottom);
-      // errorSnackBar('Error', response['message']);
     }
   }
 
   void sendOtpApiFunction() async {
     isLoading.value = true;
     var body = json.encode({
-      "mobile": numberController.text.toString(),
+      "mobile": '+91${numberController.text}',
       "type": "register",
     });
     final response = await ApiConfig.post(
         body: body, url: ApiConfig.otpUrl, useAuthToken: false);
     isLoading.value = false;
     if (response != null && response['success'] == true) {
-      EasyLoading.showToast(response['otpCode'].toString());
-    }
-    else {
+      EasyLoading.showToast(response['otp'].toString());
+      Get.toNamed(AppRoutes.otp);
+    } else {
       EasyLoading.showToast(response['message'].toString(),
           toastPosition: EasyLoadingToastPosition.center);
     }

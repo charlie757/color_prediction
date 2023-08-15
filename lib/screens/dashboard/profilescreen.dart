@@ -12,7 +12,7 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends GetView<ProfileController> {
-  const ProfileScreen({super.key});
+  const ProfileScreen({key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,16 +66,13 @@ class ProfileScreen extends GetView<ProfileController> {
                   fontWeight: FontWeight.w500),
               ScreenSize.height(25),
               CustomTextfield(
-                  hintText: etName,
-                  controller: controller.numberController),
+                  hintText: etName, controller: controller.numberController),
               ScreenSize.height(31),
               CustomTextfield(
-                  hintText: etMobile,
-                  controller: controller.numberController),
+                  hintText: etMobile, controller: controller.numberController),
               ScreenSize.height(31),
               CustomTextfield(
-                  hintText: etEmail,
-                  controller: controller.numberController),
+                  hintText: etEmail, controller: controller.numberController),
               ScreenSize.height(31),
               CustomBtn(
                   title: save,
@@ -87,10 +84,7 @@ class ProfileScreen extends GetView<ProfileController> {
                   }),
               ScreenSize.height(21),
               GestureDetector(
-                onTap: ()
-                {
-
-                },
+                onTap: () {},
                 child: CustomBtn(
                     title: "Add Bank Details",
                     height: 45,
@@ -100,10 +94,6 @@ class ProfileScreen extends GetView<ProfileController> {
                       Get.toNamed(AppRoutes.bankDetails);
                     }),
               ),
-
-
-
-
             ],
           ),
         ),

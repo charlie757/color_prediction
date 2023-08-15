@@ -12,7 +12,7 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends GetView<LoginController> {
-  const LoginScreen({super.key});
+  const LoginScreen({key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,36 +46,35 @@ class LoginScreen extends GetView<LoginController> {
                   fontWeight: FontWeight.w800),
               ScreenSize.height(21),
               CustomTextfield(
-                  hintText: loginMobile,
-                  controller: controller.numberController,
-                  textInputType: const TextInputType.numberWithOptions(signed: true, decimal: true),
-                  inputFormatters: [
-                    FilteringTextInputFormatter.digitsOnly,
-                    LengthLimitingTextInputFormatter(10)
-                  ],
-                  validator: (val) {
-                    if (val!.isEmpty) {
-                      return loginEnterPhoneValidation;
-                    } else if (val.length < 10) {
-                      return loginEnterValidPhoneValidation;
-                    }
-                  },
+                hintText: loginMobile,
+                controller: controller.numberController,
+                textInputType: const TextInputType.numberWithOptions(
+                    signed: true, decimal: true),
+                inputFormatters: [
+                  FilteringTextInputFormatter.digitsOnly,
+                  LengthLimitingTextInputFormatter(10)
+                ],
+                validator: (val) {
+                  if (val!.isEmpty) {
+                    return loginEnterPhoneValidation;
+                  } else if (val.length < 10) {
+                    return loginEnterValidPhoneValidation;
+                  }
+                },
               ),
               ScreenSize.height(31),
-
               CustomTextfield(
-                  hintText: loginPassword,
-                  controller: controller.passwordController,
-                  isObscureText: controller.passwordVisible.value,
-                  validator: (val) {
-                    if (val!.isEmpty) {
-                      return loginEnterPassword;
-                    } else if (val.length < 6) {
-                      return loginEnterValidPassword;
-                    }
-                  },
-                  ),
-
+                hintText: loginPassword,
+                controller: controller.passwordController,
+                isObscureText: controller.passwordVisible.value,
+                validator: (val) {
+                  if (val!.isEmpty) {
+                    return loginEnterPassword;
+                  } else if (val.length < 6) {
+                    return loginEnterValidPassword;
+                  }
+                },
+              ),
               ScreenSize.height(10),
               GestureDetector(
                 onTap: () {
@@ -95,8 +94,8 @@ class LoginScreen extends GetView<LoginController> {
                 ),
               ),
               ScreenSize.height(31),
-              Obx(()=>
-                CustomBtn(
+              Obx(
+                () => CustomBtn(
                     title: loginButton,
                     height: 45,
                     width: double.infinity,

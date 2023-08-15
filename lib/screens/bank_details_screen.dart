@@ -8,8 +8,9 @@ import 'package:color_demo/utils/constants.dart';
 import 'package:color_demo/utils/screensize.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 class BankDetailsScreen extends GetView<BankDetailsController> {
-  const BankDetailsScreen({super.key});
+  const BankDetailsScreen({key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

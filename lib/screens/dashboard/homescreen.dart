@@ -11,7 +11,7 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends GetView<HomeController> {
-  const HomeScreen({super.key});
+  const HomeScreen({key});
 
   @override
   Widget build(BuildContext context) {

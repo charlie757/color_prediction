@@ -12,7 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ForgotPasswordScreen extends GetView<ForgotPasswordController> {
-  const ForgotPasswordScreen({super.key});
+  const ForgotPasswordScreen({key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -11,7 +11,7 @@ import 'package:get/get.dart';
 import 'package:pinput/pinput.dart';
 
 class OtpScreen extends GetView<OtpController> {
-  const OtpScreen({super.key});
+  const OtpScreen({key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,10 +46,15 @@ class OtpScreen extends GetView<OtpController> {
                     fontWeight: FontWeight.w400),
                 ScreenSize.height(24),
                 Pinput(
-                  // validator: (s) {
-                  //   return s == '2222' ? null : 'Pin is incorrect';
-                  // },
-                  pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
+                  controller: controller.otpController,
+                  validator: (val) {
+                    if (val!.isEmpty) {
+                      return 'Enter otp';
+                    } else if (val.length < 4) {
+                      return 'Incorrect otp';
+                    }
+                  },
+                  // pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
                   showCursor: true,
                   onCompleted: (pin) => print(pin),
                 ),
@@ -127,14 +132,18 @@ class OtpScreen extends GetView<OtpController> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 25, right: 25, top: 20),
-                  child: CustomBtn(
-                      title: verification,
-                      height: 45,
-                      width: double.infinity,
-                      color: ColorConstant.blackColor,
-                      onTap: () {
-                        Get.toNamed(AppRoutes.dashboard);
-                      }),
+                  child: Obx(
+                    () => CustomBtn(
+                        title: verification,
+                        height: 45,
+                        width: double.infinity,
+                        color: ColorConstant.blackColor,
+                        isLoading: controller.isLoading.value,
+                        onTap: () {
+                          controller
+                              .checkValidation(); // Get.toNamed(AppRoutes.dashboard);
+                        }),
+                  ),
                 ),
               ],
             ),

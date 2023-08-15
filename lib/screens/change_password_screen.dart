@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ChangePasswordScreen extends GetView<ChangePasswordController> {
-  const ChangePasswordScreen({super.key});
+  const ChangePasswordScreen({key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

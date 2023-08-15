@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
 class WalletScreen extends GetView<WalletController> {
-  const WalletScreen({super.key});
+  const WalletScreen({key});
 
   @override
   Widget build(BuildContext context) {

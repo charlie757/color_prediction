@@ -11,7 +11,7 @@ class CustomBtn extends StatefulWidget {
   final bool isLoading;
   final Function() onTap;
   const CustomBtn(
-      {super.key,
+      {key,
       required this.title,
       required this.height,
       required this.width,

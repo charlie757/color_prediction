@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SplashScreen extends GetView<SplashController> {
-  const SplashScreen({super.key});
+  const SplashScreen({key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

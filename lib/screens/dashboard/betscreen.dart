@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class BetScreen extends GetView<BetController> {
-  const BetScreen({super.key});
+  const BetScreen({key});
 
   @override
   Widget build(BuildContext context) {
