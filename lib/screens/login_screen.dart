@@ -1,8 +1,8 @@
 import 'package:color_demo/config/routes.dart';
-import 'package:color_demo/controller/login_controller.dart';
 import 'package:color_demo/helper/custombtn.dart';
 import 'package:color_demo/helper/customtextfield.dart';
 import 'package:color_demo/helper/getText.dart';
+import 'package:color_demo/screens/login_screen/login_controller.dart';
 import 'package:color_demo/utils/color_constant.dart';
 import 'package:color_demo/utils/constants.dart';
 import 'package:color_demo/utils/screensize.dart';
@@ -23,7 +23,7 @@ class LoginScreen extends GetView<LoginController> {
         ));
     return Scaffold(
       body: Form(
-        key: controller.formloginkey,
+        key: controller.formKey,
         child: Padding(
           padding: const EdgeInsets.only(left: 28, right: 28, top: 0),
           child: Column(

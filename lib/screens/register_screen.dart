@@ -1,8 +1,8 @@
 import 'package:color_demo/config/routes.dart';
-import 'package:color_demo/controller/register_controller.dart';
 import 'package:color_demo/helper/custombtn.dart';
 import 'package:color_demo/helper/customtextfield.dart';
 import 'package:color_demo/helper/getText.dart';
+import 'package:color_demo/screens/registration_screen/register_controller.dart';
 import 'package:color_demo/utils/color_constant.dart';
 import 'package:color_demo/utils/constants.dart';
 import 'package:color_demo/utils/screensize.dart';
