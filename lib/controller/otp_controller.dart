@@ -3,7 +3,7 @@ import 'dart:convert';
 
 import 'package:color_demo/api/apiconfig.dart';
 import 'package:color_demo/config/routes.dart';
-import 'package:color_demo/controller/register_controller.dart';
+import 'package:color_demo/screens/registration_screen/register_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';

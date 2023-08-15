@@ -14,7 +14,7 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
 class RegisterScreen extends GetView<RegisterController> {
-  const RegisterScreen({super.key});
+  const RegisterScreen({key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class RegisterScreen extends GetView<RegisterController> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Form(
-            key: controller.formKey1,
+            key: controller.formcreatekey,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -45,7 +45,6 @@ class RegisterScreen extends GetView<RegisterController> {
                           color: ColorConstant.blackColor,
                           fontWeight: FontWeight.w800),
                       ScreenSize.height(6),
-
                       getText(
                           title: registerSubTitle,
                           textAlign: TextAlign.start,
@@ -54,46 +53,42 @@ class RegisterScreen extends GetView<RegisterController> {
                           color: ColorConstant.hintColor,
                           fontWeight: FontWeight.w800),
                       ScreenSize.height(21),
-
                       CustomTextfield(
-                          hintText: registerMobile,
-                          controller: controller.numberController,
-                          validator: (val) {
-                            if (val!.isEmpty) {
-                              return registerEnterPhone;
-                            } else if (val.length < 10) {
-                              return registerValidPhone;
-                            }
-                          },
-                          ),
-                      ScreenSize.height(21),
-
-                      CustomTextfield(
-                          hintText: registerEnterEmail,
-                          controller: controller.emailController,
-                          validator: (value) {
-                            if (value == null ||
-                                (!isValidEmail(value, isRequired: true))) {
-                              return registerValidEmail;
-                            }
-                            return null;
-                          },
-
+                        hintText: registerMobile,
+                        controller: controller.numberController,
+                        validator: (val) {
+                          if (val!.isEmpty) {
+                            return registerEnterPhone;
+                          } else if (val.length < 10) {
+                            return registerValidPhone;
+                          }
+                        },
                       ),
                       ScreenSize.height(21),
-
                       CustomTextfield(
-                          hintText: registerPassword,
-                          controller: controller.passwordController,
-                          isObscureText: controller.passwordVisible.value,
-                          validator: (val) {
-                            if (val!.isEmpty) {
-                              return registerEnterPassword;
-                            } else if (val.length < 6) {
-                              return registerValidPassword;
-                            }
-                          },
-                         ),
+                        hintText: registerEnterEmail,
+                        controller: controller.emailController,
+                        validator: (value) {
+                          if (value == null ||
+                              (!isValidEmail(value, isRequired: true))) {
+                            return registerValidEmail;
+                          }
+                          return null;
+                        },
+                      ),
+                      ScreenSize.height(21),
+                      CustomTextfield(
+                        hintText: registerPassword,
+                        controller: controller.passwordController,
+                        isObscureText: controller.passwordVisible.value,
+                        validator: (val) {
+                          if (val!.isEmpty) {
+                            return registerEnterPassword;
+                          } else if (val.length < 6) {
+                            return registerValidPassword;
+                          }
+                        },
+                      ),
                     ],
                   ),
                 ),
@@ -133,10 +128,7 @@ class RegisterScreen extends GetView<RegisterController> {
                                 fontSize: AppFontSize.s16,
                                 decoration: TextDecoration.underline,
                               ),
-                              recognizer: TapGestureRecognizer()
-                                ..onTap = () {
-
-                                },
+                              recognizer: TapGestureRecognizer()..onTap = () {},
                             ),
                             const TextSpan(text: registerAnd),
                             TextSpan(
@@ -148,7 +140,7 @@ class RegisterScreen extends GetView<RegisterController> {
                               ),
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () {
-                                 /* controller.launchURL(
+                                  /* controller.launchURL(
                                       'https://www.kodago.com/page/privacy-policy');*/
                                 },
                             ),
@@ -188,7 +180,6 @@ class RegisterScreen extends GetView<RegisterController> {
                           color: ColorConstant.newUser,
                           fontWeight: FontWeight.w700),
                       ScreenSize.width(5),
-
                       getText(
                           textAlign: TextAlign.end,
                           title: registerLogIn,
