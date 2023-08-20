@@ -2,8 +2,9 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:color_demo/api/apiconfig.dart';
+import 'package:color_demo/api/preferencestorage.dart';
 import 'package:color_demo/config/routes.dart';
-import 'package:color_demo/screens/registration_screen/register_controller.dart';
+import 'package:color_demo/controller/register_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
@@ -67,9 +68,23 @@ class OtpController extends GetxController {
     }
   }
 
+  resendApiFunction() async {
+    var body = json.encode({
+      "mobile": "+91${registerController.numberController.text}",
+      "type": "register"
+    });
+    final response = await ApiConfig.post(
+        body: body, url: ApiConfig.resendUrl, useAuthToken: false);
+    if (response != null && response['success'] == true) {
+      EasyLoading.showToast(response['otp'].toString());
+      startTimer();
+    }
+  }
+
   createAccountApiFunction() async {
     isLoading.value = true;
     var body = json.encode({
+      'name': registerController.nameController.text,
       "email": registerController.emailController.text.toString(),
       "mobile": "+91${registerController.numberController.text}",
       "password": registerController.passwordController.text.toString(),
@@ -80,6 +95,7 @@ class OtpController extends GetxController {
     isLoading.value = false;
     if (response != null && response['success'] == true) {
       Get.offAllNamed(AppRoutes.dashboard);
+      setAuthToken(response['user']['token']);
       EasyLoading.showToast(response['message'].toString(),
           toastPosition: EasyLoadingToastPosition.bottom);
     } else {

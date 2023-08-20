@@ -1,7 +1,14 @@
+import 'package:color_demo/api/apiconfig.dart';
+import 'package:color_demo/config/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeController extends GetxController {
+  final gameId = ''.obs;
+  final gameTimer = ''.obs;
+  final apiColorList = [].obs;
+  final apiNumberList = [].obs;
   final isViewResult = false.obs;
   final tabBarIndex = 0.obs;
   final amountController = TextEditingController();
@@ -19,4 +26,25 @@ class HomeController extends GetxController {
     const Color(0xff85AC89),
   ].obs;
   final numberList = [1, 2, 3, 4, 5, 6, 7, 8, 9].obs;
+
+  @override
+  void onInit() {
+    gameApiFunction();
+    super.onInit();
+  }
+
+  gameApiFunction() async {
+    final response =
+        await ApiConfig.get(url: ApiConfig.gameUrl, useAuthToken: true);
+    if (response != null && response['success'] == true) {
+      apiColorList.value = response['game']['options']['colors'];
+      apiNumberList.value = response['game']['options']['numbers'];
+    }
+  }
+
+  logout() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.clear();
+    Get.offAllNamed(AppRoutes.login);
+  }
 }

@@ -39,7 +39,7 @@ class OtpScreen extends GetView<OtpController> {
                     fontWeight: FontWeight.w400),
                 ScreenSize.height(14),
                 getText(
-                    title: '+919999999999',
+                    title: controller.registerController.numberController.text,
                     size: 20,
                     fontFamily: LatoRegular,
                     color: ColorConstant.blueColor,
@@ -93,7 +93,7 @@ class OtpScreen extends GetView<OtpController> {
                         )
                       : Obx(() => InkWell(
                           onTap: () {
-                            controller.startTimer();
+                            controller.resendApiFunction();
                             // controller.resendOtpApiFunction(context);
                           },
                           child: Visibility(

@@ -17,7 +17,7 @@ class HomeScreen extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: controller.scaffoldKey,
-      drawer: drawer(context),
+      drawer: drawer(context, controller),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(top: 20, left: 15, right: 15),

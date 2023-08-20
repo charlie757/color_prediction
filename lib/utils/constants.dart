@@ -3,31 +3,26 @@ import 'package:flutter/material.dart';
 const kContentColorLightTheme = Colors.black;
 const kContentColorDarkTheme = Colors.white;
 
-
-const authToken = '';
-
-
 //Font Family
 const String GochiHandRegular = 'gochiHand';
 const String LatoBlack = 'latoBlack';
 const String LatoRegular = 'latoRegular';
 const String LatoLight = 'latoLight';
-const String LatoBold  = 'latoBold';
+const String LatoBold = 'latoBold';
 //Splash Screen
 const String splashTitle = "Demo";
-
 
 // Login Screen
 const String loginTitle = "Proceed with your";
 const String loginSubTitle = "Login";
 
 const String loginMobile = "Mobile number";
-const String loginEnterPhoneValidation ="Enter phone number";
-const String loginEnterValidPhoneValidation ="Enter valid number";
+const String loginEnterPhoneValidation = "Enter phone number";
+const String loginEnterValidPhoneValidation = "Enter valid number";
 
 const String loginPassword = "Password";
-const String loginEnterPassword ="Enter Password";
-const String loginEnterValidPassword ="Enter Valid Password";
+const String loginEnterPassword = "Enter Password";
+const String loginEnterValidPassword = "Enter Valid Password";
 
 const String loginForgotPass = "Forgot Password?";
 const String loginButton = "Continue";
@@ -35,36 +30,36 @@ const String loginButton = "Continue";
 const String loginNewUser = "New User?";
 const String loginCreateAccount = "Create Account";
 
-
 // Login Screen
 const String registerTitle = "Register Account";
 const String registerSubTitle = "Please register down below";
 const String registerEmail = "Email Address";
-const String registerMobile = "Mobile number";
-const String registerPassword = "Password";
+const String registerMobile = "Enter Mobile number";
+const String registerName = 'Enter Your Name';
+const String registerPassword = "Enter Password";
 
 const String registerButton = "Register Now";
-const String registerAgree ='I agree to the ';
-const String registerTerms ='terms & conditions';
-const String registerAnd ='\nand ';
-const String registerPrivacy ='privacy policy';
+const String registerAgree = 'I agree to the ';
+const String registerTerms = 'terms & conditions';
+const String registerAnd = '\nand ';
+const String registerPrivacy = 'privacy policy';
 
-const String registerAlreadyAccount ='Already Have Account?';
-const String registerLogIn ='Log In';
+const String registerAlreadyAccount = 'Already Have Account?';
+const String registerLogIn = 'Log In';
 
-const String registerEnterPhone ="Enter phone number";
-const String registerValidPhone ="Enter Valid phone number";
+const String registerEnterPhone = "Enter phone number";
+const String registerValidPhone = "Enter Valid phone number";
 
-const String registerEnterPassword ="Enter Your Password";
-const String registerValidPassword ="Enter Valid Password";
+const String registerEnterPassword = "Enter Your Password";
+const String registerValidPassword = "Enter Valid Password";
 
-const String registerEnterEmail ="Enter Your Email";
-const String registerValidEmail ="Enter Valid Your Email";
-
+const String registerEnterEmail = "Enter Your Email";
+const String registerValidEmail = "Enter Valid Your Email";
 
 // ForgotPassword Screen
 const String forgotAppBar = "Forgot Password";
-const String forgotPassSubTitle = "We will send a mail to the email address you registered to regain your password ";
+const String forgotPassSubTitle =
+    "We will send a mail to the email address you registered to regain your password ";
 const String forgotPassEmail = "Email address";
 const String forgotPassButton = "Email sent to ";
 const String forgotConfirmPassword = "Send";
@@ -108,15 +103,15 @@ const String newPassword = "New Password";
 const String confirmPassword = "Confirm Password";
 
 //Group Screen
-const String groupAppbar="Groups";
+const String groupAppbar = "Groups";
 
 //Create Group
-const String createGroupSearch="Search";
-const String searchValidation="Please Type Some Text";
+const String createGroupSearch = "Search";
+const String searchValidation = "Please Type Some Text";
 
 //Submit Group
-const String submitGroup="Type group subject here...";
-const String submitGroupValidation ="Please type group subject";
+const String submitGroup = "Type group subject here...";
+const String submitGroupValidation = "Please type group subject";
 
 //GroupDetail
 const String fileRacks = "File Racks";
@@ -160,16 +155,5 @@ const String tempAuto = "Auto Id";
 const String tempTime = "Time";
 const String tempUserList = "User List";
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+// constants keys for preference
+const String authToken = 'token';

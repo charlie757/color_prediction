@@ -18,7 +18,10 @@ class ApiConfig {
   static String signUpUrl = '${baseUrl}user/signup';
   static String loginUrl = '${baseUrl}user/login';
   static String otpUrl = '${baseUrl}otp/send';
+  static String resendUrl = '${baseUrl}otp/resend';
   static String verifyOtpUrl = '${baseUrl}otp/verify';
+  static String gameUrl = '${baseUrl}game';
+  static String betGameUrl = '${baseUrl}user/game/bet';
 
   static Future post({
     required body,
@@ -75,7 +78,7 @@ class ApiConfig {
     print(prefs.getString(authToken).toString());
     try {
       final response = await http.get(Uri.parse(url), headers: {
-        "x-access-token": "${prefs.getString(authToken)}",
+        "Authorization": "Bearer ${prefs.getString(authToken)}",
       });
       if (kDebugMode) {
         log(response.body);
@@ -123,7 +126,7 @@ class ApiConfig {
       final response = await http.delete(Uri.parse(url), headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
-        'x-access-token': "${prefs.getString(authToken)}"
+        'Authorization': "Bearer ${prefs.getString(authToken)}"
       });
       print(response.request);
 

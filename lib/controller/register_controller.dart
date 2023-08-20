@@ -9,6 +9,7 @@ import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class RegisterController extends GetxController {
+  final nameController = TextEditingController();
   final numberController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
@@ -18,6 +19,9 @@ class RegisterController extends GetxController {
   final passwordVisible = true.obs;
   final isLoading = false.obs;
   final checkBoxValidation = false.obs;
+  void dispose() {
+    // formcreatekey!.dispose();
+  }
 
   validation() {
     if (!formcreatekey.currentState!.validate()) {
