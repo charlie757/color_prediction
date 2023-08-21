@@ -1,3 +1,5 @@
 import 'package:get/get.dart';
 
-class BetController extends GetxController {}
+class BetController extends GetxController {
+
+}

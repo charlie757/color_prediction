@@ -7,6 +7,7 @@ import 'package:color_demo/utils/constants.dart';
 import 'package:color_demo/utils/screensize.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:random_avatar/random_avatar.dart';
 
 drawer(BuildContext context, HomeController homeController) {
   return Container(
@@ -39,7 +40,7 @@ drawer(BuildContext context, HomeController homeController) {
           padding: const EdgeInsets.only(left: 21),
           child: Row(
             children: [
-              Stack(
+            /*  Stack(
                 children: [
                   Container(
                     height: 70,
@@ -70,25 +71,28 @@ drawer(BuildContext context, HomeController homeController) {
                     ),
                   )
                 ],
-              ),
+              ),*/
+              RandomAvatar('saytoonz', height: 50, width: 50),
               ScreenSize.width(22),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  getText(
-                      title: 'User5667',
-                      size: 18,
-                      fontFamily: LatoRegular,
-                      color: ColorConstant.white,
-                      fontWeight: FontWeight.w700),
-                  ScreenSize.height(9),
-                  getText(
-                      title: '+917999081415',
-                      size: 12,
-                      fontFamily: LatoRegular,
-                      color: ColorConstant.white,
-                      fontWeight: FontWeight.w400),
-                ],
+              Obx(()=>
+                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    getText(
+                        title: homeController.userName.value,
+                        size: 18,
+                        fontFamily: LatoRegular,
+                        color: ColorConstant.white,
+                        fontWeight: FontWeight.w700),
+                    ScreenSize.height(9),
+                    getText(
+                        title: homeController.mobile.value,
+                        size: 12,
+                        fontFamily: LatoRegular,
+                        color: ColorConstant.white,
+                        fontWeight: FontWeight.w400),
+                  ],
+                ),
               )
             ],
           ),

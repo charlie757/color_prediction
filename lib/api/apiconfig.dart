@@ -20,6 +20,10 @@ class ApiConfig {
   static String otpUrl = '${baseUrl}otp/send';
   static String resendUrl = '${baseUrl}otp/resend';
   static String verifyOtpUrl = '${baseUrl}otp/verify';
+  static String userDetailsUrl = '${baseUrl}user/get_detail';
+  static String updateUserDetailsUrl = '${baseUrl}user/update_detail';
+
+
   static String gameUrl = '${baseUrl}game';
   static String betGameUrl = '${baseUrl}user/game/bet';
 

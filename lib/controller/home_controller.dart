@@ -9,6 +9,8 @@ class HomeController extends GetxController {
   final gameTimer = ''.obs;
   final apiColorList = [].obs;
   final apiNumberList = [].obs;
+  final userName = "".obs;
+  final mobile = "".obs;
   final isViewResult = false.obs;
   final tabBarIndex = 0.obs;
   final amountController = TextEditingController();
@@ -30,6 +32,7 @@ class HomeController extends GetxController {
   @override
   void onInit() {
     gameApiFunction();
+    userDetailApiFunction();
     super.onInit();
   }
 
@@ -39,6 +42,14 @@ class HomeController extends GetxController {
     if (response != null && response['success'] == true) {
       apiColorList.value = response['game']['options']['colors'];
       apiNumberList.value = response['game']['options']['numbers'];
+    }
+  }
+  userDetailApiFunction() async {
+    final response =
+    await ApiConfig.get(url: ApiConfig.userDetailsUrl, useAuthToken: true);
+    if (response != null && response['success'] == true) {
+      userName.value = response['user']['name'];
+      mobile.value = response['user']['mobile'];
     }
   }
 
